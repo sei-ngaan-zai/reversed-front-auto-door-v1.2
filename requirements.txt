@@ -4,3 +4,4 @@ requests==2.31.0
 websocket-client==1.6.4
 gunicorn==20.1.0
 eventlet==0.33.3
+setuptools==65.5.0
