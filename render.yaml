@@ -2,7 +2,6 @@ databases:
   - name: mysite
     databaseName: mysite
     user: mysite
-
  services:
  - type: pserv
    name: pgbouncer
