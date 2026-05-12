@@ -22,9 +22,9 @@ input[type="email"], input[type="password"], input[type="text"], input[type="num
 }
 input:focus { border-color:var(--accent); }
 input::placeholder { color:var(--muted); }
-input[type="number"] { -moz-appearance:textfield; }
+input[type="number"] { -moz-appearance:textfield; appearance:textfield; }
 input[type="number"]::-webkit-inner-spin-button { -webkit-appearance:none; }
-
+input[type="number"]::-moz-range-thumb { -moz-appearance:none; }
 /* ── Buttons ── */
 .btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:9px 16px; border:none; border-radius:var(--radius); font-size:13px; font-weight:600; cursor:pointer; transition:opacity 0.15s,background 0.15s,transform 0.1s; white-space:nowrap; }
 .btn:active { transform:scale(0.97); }
