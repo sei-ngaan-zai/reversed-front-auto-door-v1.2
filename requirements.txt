@@ -5,3 +5,4 @@ websocket-client==1.5.1
 gunicorn==20.1.0
 eventlet==0.32.0
 setuptools==70.0.0
+dnspython==2.2.1
