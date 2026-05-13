@@ -57,6 +57,7 @@ def on_login(data):
         c.login()
         c.connect_ws()
         c.start()
+        time.sleep(1)  # Give WebSocket time to connect
         c.join_core()
         with client_lock:
             global client
