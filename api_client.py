@@ -43,8 +43,8 @@ class ApiClient:
 
     def log(self, message):
         self.log_buffer.append(message)
-        if len(self.log_buffer) > 200:
-            self.log_buffer = self.log_buffer[-200:]
+        if len(self.log_buffer) > 100:
+            self.log_buffer = self.log_buffer[-100:]
         self.emit("log", {"message": message})
 
     def push_state(self):
