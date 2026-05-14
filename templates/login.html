@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>逆統戰自動門 &mdash; 登入</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body class="login-page">
+  <div class="login-card">
+    <div class="login-logo">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <rect width="48" height="48" rx="12" fill="#6366f1"/>
+        <path d="M14 34V20l10-8 10 8v14H28v-8h-8v8H14z" fill="white"/>
+      </svg>
+    </div>
+    <h1>逆統戰自動門 V1.2</h1>
+    <p class="subtitle">屠龍小隊專用</p>
+    <form id="loginForm">
+      <div class="field">
+        <label>帳號名稱</label>
+        <input type="text" id="email" placeholder="請輸入您的帳號名稱" autocomplete="username" required/>
+      </div>
+      <div class="field">
+        <label>密碼</label>
+        <div style="position:relative;">
+          <input type="password" id="password" placeholder="請輸入您的密碼" autocomplete="current-password" required style="padding-right:40px;"/>
+          <button type="button" id="togglePassword" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#6b7280;font-size:16px;">👁</button>
+        </div>
+      </div>
+      <div id="loginError" class="error-msg hidden"></div>
+      <button type="submit" id="loginBtn" class="btn btn-primary btn-full">
+        <span id="loginBtnText">連接</span>
+        <span id="loginSpinner" class="spinner hidden"></span>
+      </button>
+    </form>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="/static/login.js"></script>
+</body>
+</html>
