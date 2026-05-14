@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
+import os
 import threading
+import time
 
 app = Flask(__name__)
 app.secret_key = "komisureiya_secret_key_2024"
@@ -65,9 +67,9 @@ def on_login(data):
         emit("login_result", {"ok": True})
         c.push_state()
     except Exception as e:
+        app.logger.exception("Login failed")
         emit("login_result", {"ok": False, "error": str(e)})
-
-@socketio.on("enter_union")
+        @socketio.on("enter_union")
 def on_enter_union(data):
     with client_lock:
         if client:
@@ -137,4 +139,5 @@ def on_get_state():
 # ── Run ────────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    socketio.run(app, host="0.0.0.0", port=5000, debug=False, allow_unsafe_werkzeug=True)
+    port = int(os.environ.get("PORT", 5000))
+    socketio.run(app, host="0.0.0.0", port=port, debug=False, allow_unsafe_werkzeug=True)
